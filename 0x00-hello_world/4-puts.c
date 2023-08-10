@@ -1,10 +1,8 @@
 #include <stdio.h>
 
 /**
- * function main
- * theris no input parameter
- *  prints information about programming
- *  returns 0
+ * main - entry of the program
+ * Return: 0
  */
 int main(void)
 {
