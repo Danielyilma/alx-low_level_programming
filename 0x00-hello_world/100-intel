@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -S $CMAKE
+gcc -S -masm=intel $CMAKE
