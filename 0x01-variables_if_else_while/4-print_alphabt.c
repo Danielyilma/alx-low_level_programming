@@ -6,14 +6,14 @@
 */
 int main(void)
 {
-    int n  = 97;
-    while (n < 123)
-    {
-        if (((char)n != 'e') && ((char)n != 'q'))
-        putchar((char)n);
-        
-        n++;
-    }
-    putchar('\n');
-    return (0);
+	int n  = 97;
+
+	while (n < 123)
+	{
+		if (((char)n != 'e') && ((char)n != 'q'))
+		putchar((char)n);
+		n++;
+	}
+	putchar('\n');
+	return (0);
 }
