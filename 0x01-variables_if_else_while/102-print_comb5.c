@@ -6,7 +6,7 @@
 */
 int main(void)
 {
-	int i, j, k, l;
+	int i, j, k, l, y = 0;
 
 	for (i = 48; i < 58; i++)
 	{
@@ -14,7 +14,7 @@ int main(void)
 		{
 			for (k = i; k < 58; k++)
 			{
-				for (l = j + 1; l < 58; l++)
+				for (l = j + y; l < 58; l++)
 				{
 					putchar((char)i);
 					putchar((char)j);
@@ -30,8 +30,10 @@ int main(void)
 				}
 			}
 		}
+		if (i == 52)
+		y++;
 	}
 
-	putchar(' ');
+	putchar('\n');
 	return (0);
 }
