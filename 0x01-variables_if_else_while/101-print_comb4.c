@@ -6,15 +6,11 @@
 */
 int main(void)
 {
-    int i = 48, j = 48, k = 48;
-
-    while (i < 58)
+    for (int i = 48; i < 58; i++)
     {
-        j = i + 1;  
-        k = j +1;
-        while (j < 58)
+        for (int j = i+1; j < 58; j++)
         {
-            while (k < 58)
+            for (int k = j+1; k < 58; k++)
             {
               putchar((char)i);
               putchar((char)j);
@@ -24,11 +20,8 @@ int main(void)
                putchar(',');
                putchar(' ');
               }
-              k++;
             }
-            j++;
         }
-        i++;
     }
     putchar('\n');
  return 0;
