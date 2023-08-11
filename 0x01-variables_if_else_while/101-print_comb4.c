@@ -6,11 +6,12 @@
 */
 int main(void)
 {
-    for (int i = 48; i < 58; i++)
+    int i, j, k;
+    for (i = 48; i < 58; i++)
     {
-        for (int j = i+1; j < 58; j++)
+        for (j = i+1; j < 58; j++)
         {
-            for (int k = j+1; k < 58; k++)
+            for (k = j+1; k < 58; k++)
             {
               putchar((char)i);
               putchar((char)j);
