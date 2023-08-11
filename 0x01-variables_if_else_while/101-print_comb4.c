@@ -19,8 +19,8 @@ int main(void)
 				putchar((char)k);
 				if (i != 55)
 				{
-				 putchar(',');
-				 putchar(' ');
+				putchar(',');
+				putchar(' ');
 				}
 			}
 		}
