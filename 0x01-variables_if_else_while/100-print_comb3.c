@@ -17,13 +17,13 @@ int main(void)
 			putchar((char)j);
 			if (i != 56)
 			{
-			putchar(',');
-			putchar(' ');
+				putchar(',');
+				putchar(' ');
 			}
 			j++;
 		}
 		i++;
 	}
 	putchar('\n');
-
+	return (0);
 }
