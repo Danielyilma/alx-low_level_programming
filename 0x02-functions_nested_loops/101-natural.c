@@ -2,10 +2,10 @@
 
 /**
 	* main - prints sum of multiple of 3 | 5
- * Return: 
+ * Return: 0
 */
 
-int main()
+int main(void)
 {
 	int i, sum = 0;
 
@@ -17,4 +17,5 @@ int main()
 		}
 	}
 	printf("%d\n", sum);
+	return (0);
 }
