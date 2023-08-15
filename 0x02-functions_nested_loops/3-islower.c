@@ -2,8 +2,8 @@
 
 /**
 * _islower - check lower case letter
-* parameter - integer 
-* Return - integer 0 or 1
+* @c: integer
+* Return: integer 0 or 1
 */
 
 int _islower(int c)

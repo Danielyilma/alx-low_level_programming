@@ -1,9 +1,10 @@
 #include <stdio.h>
 
 /**
-* print_alphabet - print alphabet from start to end
-* Return - void
-*/
+ * print_alphabet - print alphabet from start to end
+ * @void: no parameter
+ * Return: void
+ */
 
 void print_alphabet(void)
 {
