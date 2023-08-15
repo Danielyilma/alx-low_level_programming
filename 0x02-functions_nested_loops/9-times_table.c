@@ -8,43 +8,30 @@
 
 void times_table(void)
 {
-	int res, ores, count = 0, dig, cha, i, j;
+	int result, i, j;
 
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < 10; i++)
 	{
-		for (j = 0; j < 9; j++)
+		for (j = 0; j < 10; j++)
 		{
-			ores = i * j;
-			res = ores;
-			while (res != 0)
+			result = i * j;
+			if (result > 9)
 			{
-				if (res > 9)
-				{
-					dig = res / 10;
-					res %= 10;
-				}
-				else
-				{
-					dig = res;
-					res = 0;
-				}
 
-				cha = dig + '0';
-				_putchar(cha);
-				count++;
-			}
-			_putchar(',');
-			if (ores > 9)
-			{
-				_putchar(' ');
-				_putchar(' ');
+				_putchar((result / 10 + '0'));
+				_putchar((result % 10 + '0'));
+				if (j != 9)
+				_putchar(',');
 			}
 			else
 			{
 				_putchar(' ');
+				_putchar((result + '0'));
+				if (j != 9)
+				_putchar(',');
 			}
+			_putchar(' ');
 		}
 		_putchar('\n');
-
 	}
 }
