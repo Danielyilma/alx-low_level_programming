@@ -6,16 +6,19 @@
 */
 int main(void)
 {
-	int i, j, k, l, y = 0;
+	int i, j, k, l, tmp;
 
 	for (i = 48; i < 58; i++)
 	{
 		for (j = 48; j < 58; j++)
 		{
+			tmp = j;
 			for (k = i; k < 58; k++)
 			{
-				for (l = j + y; l < 58; l++)
+				for (l = 48; l < 58; l++)
 				{
+					if (tmp != j)
+						l = j;
 					putchar((char)i);
 					putchar((char)j);
 					putchar(' ');
@@ -27,11 +30,10 @@ int main(void)
 
 					putchar(',');
 					putchar(' ');
+					tmp++;
 				}
 			}
 		}
-		if (i == 52)
-		y++;
 	}
 
 	putchar('\n');
