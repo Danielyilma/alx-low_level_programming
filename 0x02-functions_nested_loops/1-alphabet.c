@@ -1,5 +1,5 @@
 #include <stdio.h>
-void print_alphabet(void);
+#include "main.h"
 /**
  * print_alphabet - print alphabet from start to end
  * @void: no parameter
