@@ -3,6 +3,7 @@
 /**
  * print_alphabet - print alphabet from start to end 10 times
  * @void: no parameter
+ * description: uses nested for loop to print alphabets
  * Return: none
  */
 
@@ -14,10 +15,10 @@ void print_alphabet_x10(void)
 	{
 		for (j = 97; j < 113; j++)
 		{
-			putchar((char)j);
+			_putchar((char)j);
 		}
 
-		putchar('\n');
+		_putchar('\n');
 	}
 	return;
 }

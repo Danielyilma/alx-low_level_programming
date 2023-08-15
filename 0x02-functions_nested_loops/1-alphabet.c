@@ -12,7 +12,7 @@ void print_alphabet(void)
 
 	for (i = 97; i < 123; i++)
 	{
-		printf("%c", (char)i);
+		_putchar((char)i);
 	}
-	printf("\n");
+	_putchar('\n');
 }
