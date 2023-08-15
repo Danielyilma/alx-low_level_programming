@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+void print_alphabet(void);
 /**
  * print_alphabet - print alphabet from start to end
  * @void: no parameter
@@ -8,7 +8,8 @@
 
 void print_alphabet(void)
 {
-	for (int i = 97; i < 123; i++)
+	int i;
+	for (i = 97; i < 123; i++)
 	{
 		printf("%c", (char)i);
 	}

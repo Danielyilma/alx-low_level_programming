@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 /**
-* main - printing word
-* Return - 0
+ * main - printing word
+ * description: prints _putchar
+ * Return: 0
  */
 
 int main(void)
