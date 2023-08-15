@@ -3,10 +3,12 @@
 
 /**
 	* add - addes two integer
-	* Returns: sum
+	* @num1: integer
+	* @num2: integer
+	* Return: sum
 */
 
-int add(int num1,int num2)
+int add(int num1, int num2)
 {
 	return (num1 + num2);
 }
