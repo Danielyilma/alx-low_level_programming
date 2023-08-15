@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include "main.h"
 /**
  * print_alphabet - print alphabet from start to end 10 times
  * @void: no parameter
