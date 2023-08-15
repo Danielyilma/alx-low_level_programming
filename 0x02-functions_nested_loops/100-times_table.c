@@ -3,6 +3,7 @@
 
 /**
 	* print_times_table - prints multiplication table
+	* @n: integer
 	* Return: 0
 */
 
@@ -17,7 +18,7 @@ void print_times_table(int n)
 			for (j = 0; j <= n; j++)
 			{
 				result = i * j;
-				if (result > 9)
+				if (result > 9 && result < 99)
 				{
 					_putchar((result / 10 + '0'));
 					_putchar((result % 10 + '0'));
@@ -31,7 +32,9 @@ void print_times_table(int n)
 				else
 				{
 					if (j != 0)
+					{
 					_putchar(' ');
+					}
 					_putchar((result + '0'));
 				}
 				if (j != n)
