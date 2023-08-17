@@ -21,6 +21,7 @@ int main(void)
 		else if ((i % 3 != 0) && (i % 5 == 0))
 		{
 			printf("Buzz");
+			if (i != 100)
 			putchar(' ');
 			continue;
 		}
@@ -32,6 +33,7 @@ int main(void)
 			continue;
 		}
 		printf("%d", i);
+		if (i != 100)
 		putchar(' ');
 	}
 	printf("\n");
