@@ -11,13 +11,15 @@
 
 void print_rev(char *s)
 {
-	char *point = s;
+	int i = 0;
+
 	while (*s != '\0')
 	{
+		i++;
 		s++;
 	}
-
-	while (s != point - 1)
+	s--;
+	for ( ; i != 0; i--)
 	{
 		_putchar(*s);
 		s--;
