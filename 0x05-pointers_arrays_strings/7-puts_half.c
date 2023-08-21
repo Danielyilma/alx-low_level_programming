@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
-* puts2 - changes integer to 98
+* puts_half - changes integer to 98
 *
 * @str: pointer to character array
 *
@@ -19,7 +19,7 @@ void puts_half(char *str)
 		len++;
 		temp++;
 	}
-	n = (len + 1) / 2;	
+	n = (len + 1) / 2;
 	str = str + n;
 
 	for (i = n; i < len; i++)
