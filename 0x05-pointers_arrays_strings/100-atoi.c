@@ -11,9 +11,9 @@
 
 int _atoi(char *s)
 {
-	int num = 0, count = 0;
+	unsigned int num = 0, count = 0;
 
-	while(*s != '\0')
+	while (*s != '\0')
 	{
 		if (*s == '-')
 		count++;
@@ -22,13 +22,13 @@ int _atoi(char *s)
 		{
 			num = (num * 10) + *s - '0';
 		}
-		else if (*(s+1) == '\0' && num == 0)
+		else if (*(s + 1) == '\0' && num == 0)
 		return (0);
 		s++;
 	}
-	
+
 	if (count % 2 != 0)
-	return (-1*num);
+	return (-1 * num);
 
 	return (num);
 }
