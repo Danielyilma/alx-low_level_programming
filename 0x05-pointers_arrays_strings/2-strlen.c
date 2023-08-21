@@ -6,7 +6,7 @@
 *
 * @s: pointer to character array
 *
-* Return : integer
+* Return: integer
 */
 
 int _strlen(char *s)
