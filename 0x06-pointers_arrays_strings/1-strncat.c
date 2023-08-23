@@ -22,30 +22,38 @@ int _strlen(char *s)
 }
 
 /**
-* _strcat - concatinate string
+* _strncat - concatinate n string
 *
 * @dest: pointer to character
 *
 * @src: pointer to character
 *
+* @n: number of integer to be concatinate
+*
 * Return: character pointer
 */
 
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
-	int len1, len2;
+	int i, len1, len2;
 	char *temp = dest;
 
 	len1 = _strlen(dest);
 	len2 = _strlen(src);
 	temp += len1;
 
-	while (*src != '\0')
+	for (i = 0; i < n; i++)
 	{
 		*temp = *src;
+		if (len2 < n)
+		n = len2;
+
 		src++;
 		temp++;
+		if (i == (n - 1))
+		*temp = '\0';
 	}
-	temp -= (len1 + len2);
+	temp -= (len1 + n);
+
 	return (temp);
 }
