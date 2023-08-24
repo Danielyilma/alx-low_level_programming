@@ -46,5 +46,5 @@ char *_strncpy(char *dest, char *src, int n)
 	}
 	temp -= n;
 
-	return (temp);
+	return (dest);
 }
