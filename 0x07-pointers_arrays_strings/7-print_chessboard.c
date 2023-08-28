@@ -2,10 +2,9 @@
 #include "main.h"
 
 /**
- * _strchr - filles same n
+ * print_chessboard - filles same n
  *
- * @s: character pointer
- * @c: character
+ * @a: character pointer
  *
  * Return: character
  */
