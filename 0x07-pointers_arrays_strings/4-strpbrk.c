@@ -2,25 +2,25 @@
 #include "main.h"
 
 /**
- * _strchr - filles same n
+ * _strpbrk - filles same n
  *
  * @s: character pointer
- * @c: character
+ * @accept: character pointer
  *
  * Return: character
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int i, j;
-	while (*(s + j) != '\0')
+	int i = 0;
+
+	while (*s)
 	{
-		j = 0;
-		for (i = 0; *(accept + i) != '\0'; i++)
+		for (i = 0; accept[i]; i++)
 		{
-			if (*(s + j) == *(accept + i))
-			return (s + j);
+			if (*s == accept[i])
+			return (s);
 		}
-		j++;
+		s++;
 	}
 	return ('\0');
 }
