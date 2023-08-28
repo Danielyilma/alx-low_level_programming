@@ -6,7 +6,6 @@
  *
  * @s: character pointer
  * @c: character
- * @n: integer
  *
  * Return: character
  */
@@ -15,9 +14,9 @@ char *_strchr(char *s, char c)
 	while (*s != '\0')
 	{
 		if (*s == c)
-		break;
+		return (s);
 		s++;
 	}
-
+	s += 1;
 	return (s);
 }
