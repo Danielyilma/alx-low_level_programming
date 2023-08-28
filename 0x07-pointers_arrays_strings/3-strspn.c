@@ -12,34 +12,20 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int count = 0;
-	int len2 = 0, j, i, len1 = 0;
+	int i = 0;
 
-	while (*(s + len1) != '\0')
+	while (*s)
 	{
-		len1++;
-	}
-
-	printf("%d\n", len1);
-
-	while (*(accept + len2) != '\0')
-	{
-		len2++;
-	}
-
-
-	for (i = 0; i < len1; i++)
-	{
-		for (j = 0; j < len2; j++)
+		for (i = 0; accept[i]; i++)
 		{
-			if (s[i] == accept[j])
+			if (*s == accept[i])
 			{
 				count++;
+				break;
 			}
-
+			else if (accept[i + 1] == '\0')
+			return (count);
 		}
-		if (i > (int)count)
-		return (count);
-
+		s++;
 	}
-	return (count);
 }
