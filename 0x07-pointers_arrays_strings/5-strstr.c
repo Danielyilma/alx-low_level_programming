@@ -2,10 +2,10 @@
 #include "main.h"
 
 /**
- * _strpbrk - filles same n
+ * _strstr - filles same n
  *
- * @s: character pointer
- * @accept: character pointer
+ * @haystack: character pointer
+ * @needle: character pointer
  *
  * Return: character
  */
