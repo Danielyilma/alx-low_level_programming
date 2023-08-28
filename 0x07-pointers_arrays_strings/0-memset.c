@@ -2,12 +2,12 @@
 #include "main.h"
 
 /**
- * _memset - filles same n 
+ * _memset - filles same n
  *
  * @s: character pointer
  * @b: character
  * @n: integer
- * 
+ *
  * Return: character
  */
 char *_memset(char *s, char b, unsigned int n)
