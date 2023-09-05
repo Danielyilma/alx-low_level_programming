@@ -18,7 +18,7 @@ char *str_concat(char *s1, char *s2)
 	int i = 0, j = 0;
 	char *array;
 
-	array = (char *)malloc(sizeof(s1) + sizeof(s2) - 1);
+	array = (char *)malloc(sizeof(*s1) + sizeof(*s2) - 1);
 
 	if (array == NULL)
 	return (NULL);
@@ -33,5 +33,6 @@ char *str_concat(char *s1, char *s2)
 		j++;
 		i++;
 	}
+	array[i + 1] = '\0';
 	return (array);
 }
