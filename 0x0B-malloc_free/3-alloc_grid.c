@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * create_array - creates array and initialize
+ * alloc_grid - creates array and initialize
  *
  * @width: int
  *
@@ -42,4 +42,5 @@ int **alloc_grid(int width, int height)
 		}
 	}
 	return (array);
+	free(array);
 }
