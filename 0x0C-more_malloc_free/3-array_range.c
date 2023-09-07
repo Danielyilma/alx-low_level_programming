@@ -21,6 +21,8 @@ int *array_range(int min, int max)
 
 	n = max - min + 1;
 	num = (int *)malloc(sizeof(int) * (n));
+	if (num)
+	return (NULL);
 	for (i = 0; i < n; i++, min++)
 	{
 		num[i] = min;
