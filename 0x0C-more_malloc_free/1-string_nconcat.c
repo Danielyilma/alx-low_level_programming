@@ -34,34 +34,34 @@ int _strlen(char *s)
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-        char *new;
-        unsigned int i = 0, j, len1, len2;
+	char *new;
+	unsigned int i = 0, j, len1, len2;
 
-        len1 = _strlen(s1);
-        len2 = _strlen(s2);
+	len1 = _strlen(s1);
+	len2 = _strlen(s2);
 
-        if (s1 == NULL)
-        s1 = "";
-        if (s2 == NULL)
-        s2 = "";
+	if (s1 == NULL)
+	s1 = "";
+	if (s2 == NULL)
+	s2 = "";
 
-        if (n > len2)
-        n = len2;
+	if (n > len2)
+	n = len2;
 
-        new = (char *)malloc(sizeof(char) * (len1 + len2 +1));
-        if (new == NULL)
-        return NULL;
+	new = (char *)malloc(sizeof(char) * (len1 + len2 + 1));
+	if (new == NULL)
+	return (NULL);
 
-        while (s1[i] != '\0')
-        {
-                new[i] = s1[i];
-                i++; 
-        }
-        
-        for (j = 0; j < n; j++, i++)
-        {
-                new[i] = s2[j];
-        }
-        new[i] = '\0';
-        return (new);
+	while (s1[i] != '\0')
+	{
+		new[i] = s1[i];
+		i++;
+	}
+
+	for (j = 0; j < n; j++, i++)
+	{
+		new[i] = s2[j];
+	}
+	new[i] = '\0';
+	return (new);
 }

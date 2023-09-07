@@ -3,9 +3,10 @@
 #include "main.h"
 
 /**
- * malloc_checked - returns a pointer to allocated space
+ * array_range - returns a pointer to allocated space
  *
- * @b: unsigned integer
+ * @min: unsigned integer
+ * @max: int
  *
  * Return: pointer
  *
@@ -13,16 +14,17 @@
 
 int *array_range(int min, int max)
 {
-        int *num, n, i;
-        if (min > max)
-        return (NULL);
+	int *num, n, i;
 
-        n = max -min + 1;
-        num = (int *)malloc(sizeof(int) * (n));
-        for (i = 0; i < n; i++, min++)
-        {
-                num[i] = min;
-        }
+	if (min > max)
+	return (NULL);
 
-        return (num);
+	n = max - min + 1;
+	num = (int *)malloc(sizeof(int) * (n));
+	for (i = 0; i < n; i++, min++)
+	{
+		num[i] = min;
+	}
+
+	return (num);
 }
