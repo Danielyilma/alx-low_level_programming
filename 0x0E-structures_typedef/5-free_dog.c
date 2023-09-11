@@ -3,7 +3,7 @@
 #include "dog.h"
 
 /**
- * print_dog - initialize dog description
+ * free_dog - initialize dog description
  *
  * @d: struct dog
  *
