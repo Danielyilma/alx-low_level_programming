@@ -3,6 +3,25 @@
 #include "dog.h"
 
 /**
+ * _strlen - length of string
+ *
+ * @str: character pointer
+ *
+ * Return: integer
+ */
+
+int _strlen(char *str)
+{
+	int i = 0;
+
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i + 1);
+}
+
+/**
  * new_dog - initialize dog description
  *
  * @name: name of the dog
@@ -14,20 +33,25 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *newg;
+	dog_t *newdg;
 
-	newg = malloc(sizeof(dog_t));
-	if (newg != NULL)
-	{
-		newg->name = malloc(sizeof(char) * 9);
-		newg->owner = malloc(sizeof(char) * 9);
-	}
-	else
+	newdg = malloc(sizeof(dog_t));
+
+	if (!newdg)
 	return (NULL);
 
+	newdg->name = malloc(sizeof(char) * 9);
+	newdg->owner = malloc(sizeof(char) * 9);
 
-	newg->name = name;
-	newg->age = age;
-	newg->owner = owner;
-	return (newg);
+	if (!newdg->name)
+	return (NULL);
+	if (!newdg->owner)
+	return (NULL);
+
+	newdg->name = name;
+	newdg->age = age;
+	newdg->owner = owner;
+
+	return (newdg);
 }
+
