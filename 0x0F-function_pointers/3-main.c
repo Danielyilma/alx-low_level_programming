@@ -40,8 +40,6 @@ int main(int argc, char *argv[])
 	}
 
 	opration = get_op_func(argv[2]);
-	if (opration == NULL)
-	return (0);
 	result = opration(atoi(argv[1]), atoi(argv[3]));
 	printf("%d\n", result);
 
