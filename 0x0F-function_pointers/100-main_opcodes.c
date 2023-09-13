@@ -25,6 +25,9 @@ int main(int argc, char *argv[])
 	bites = atoi(argv[1]);
 	pointer = (char *)main;
 
+	if (pointer == NULL)
+	return (1);
+
 	if (bites < 0)
 	{
 		printf("Error\n");
