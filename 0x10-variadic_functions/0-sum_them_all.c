@@ -6,6 +6,7 @@
  * sum_them_all - sum all parameter
  *
  * @n: size
+ * @...: no of arguments
  *
  * Return: integer
  */
