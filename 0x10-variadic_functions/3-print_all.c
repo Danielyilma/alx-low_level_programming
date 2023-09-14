@@ -12,44 +12,49 @@
 
 void print_all(const char * const format, ...)
 {
-	int i = 0, j = 0, num;
+	int j = 0, num;
 	char ch, *chr;
 	float numf;
+	int inswitch = 0;
 	va_list args;
 
 	va_start(args, format);
-
-	while (format[i])
+	while (format[j])
 	{
-		i++;
-	}
-
-	while (j < i)
-	{
-		if (format[j] == 'c')
+		switch (format[j])
 		{
+			case 'c':
 			ch = va_arg(args, int);
 			printf("%c", ch);
-		}
-		if (format[j] == 'i')
-		{
+			inswitch = 1 ;
+			break;
+			case 'i':
 			num = va_arg(args, int);
 			printf("%d", num);
-		}
-		if (format[j] == 'f')
-		{
+			inswitch = 1;
+			break;
+			case 'f':
 			numf = va_arg(args, double);
 			printf("%f", numf);
-		}
-		if (format[j] == 's')
-		{
+			inswitch = 1;
+			break;
+			case 's':
 			chr = va_arg(args, char *);
+			if (chr == NULL)
+			{
+				printf("(nil)");
+				inswitch = 1;
+				break;
+			}
+			inswitch = 1;
 			printf("%s", chr);
+			break;			
 		}
-		printf(form, type);
-		if (j != (i - 1))
-		printf(", ");
-
+		if (format[j + 1] != '\0' && inswitch)
+		{
+			printf(", ");
+			inswitch = 0;
+		}
 		j++;
 	}
 	printf("\n");
