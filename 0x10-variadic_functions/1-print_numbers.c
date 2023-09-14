@@ -3,11 +3,12 @@
 #include "variadic_functions.h"
 
 /**
- * sum_them_all - sum all parameter
+ * print_numbers - sum all parameter
  *
- * @n: size
+ * @separator: separator character
+ * @n: unsigned integer
  *
- * Return: integer
+ * Return: 0
  */
 
 void print_numbers(const char *separator, const unsigned int n, ...)
@@ -20,7 +21,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < (int)n; i++)
 	{
 		num = va_arg(args, int);
-		if (i == ((int)n - 1))
+		if (i == (int)(n - 1) || separator == NULL)
 		{
 			printf("%d", num);
 			break;
