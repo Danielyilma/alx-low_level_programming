@@ -3,9 +3,10 @@
 #include "variadic_functions.h"
 
 /**
- * sum_them_all - sum all parameter
+ * print_strings - sum all parameter
  *
- * @n: size
+ * @separator: size
+ * @n: number of integer
  *
  * Return: integer
  */
@@ -16,15 +17,24 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	char *ch;
 	va_list args;
 
+	va_start(args, n);
+
 	for (i = 0; i < (int)n; i++)
 	{
-		ch = va_arg(args, char);
+		ch = va_arg(args, char*);
+
 		if (i == ((int)n - 1))
-		printf("%s", ch);
+		{
+			printf("%s", ch);
+			break;
+		}
+		if (ch == NULL)
+		printf("(nil)");
+		if (separator == NULL)
+		continue;
 		if (separator != NULL && ch != NULL)
 		printf("%s%s", ch, separator);
-		if (ch == NULL && separator != NULL)
-		printf("(nil)");
 	}
+	printf("\n");
 	va_end(args);
 }
