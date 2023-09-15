@@ -17,6 +17,8 @@ void print_all(const char * const format, ...)
 	va_list args;
 
 	va_start(args, format);
+	while (!format)
+	return;
 	while (format[j])
 	{
 		switch (format[j])
@@ -37,10 +39,7 @@ void print_all(const char * const format, ...)
 			ch = va_arg(args, char *);
 			i = 1;
 			if (!ch)
-			{
-				printf("(nil)");
-				break;
-			}
+			ch = "(nil)";
 			printf("%s", ch);
 			break;
 		}
