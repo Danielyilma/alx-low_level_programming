@@ -16,6 +16,8 @@ void print_all(const char * const format, ...)
 	int i = 0, j = 0;
 	va_list args;
 
+	while (format == NULL)
+	return;
 	va_start(args, format);
 	while (format[j])
 	{
@@ -36,11 +38,8 @@ void print_all(const char * const format, ...)
 			case 's':
 			ch = va_arg(args, char *);
 			i = 1;
-			if (!ch)
-			{
-				printf("(nil)");
-				break;
-			}
+			if (ch)
+			ch = "(nil)";
 			printf("%s", ch);
 			break;
 		}
@@ -48,8 +47,8 @@ void print_all(const char * const format, ...)
 		{
 			printf(", ");
 			i = 0;
-		}
-		j++;
+		} j++;
 	}
 	printf("\n");
+	va_end(args);
 }

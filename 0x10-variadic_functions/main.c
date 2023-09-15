@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "variadic_functions.h"
+#include <stdio.h>
 
 /**
  * main - check the code
@@ -8,11 +8,6 @@
  */
 int main(void)
 {
-    int sum;
-
-    sum = sum_them_all(4, 98, 2, 1, -4);
-    printf("%d\n", sum);
-    sum = sum_them_all(0);
-    printf("%d\n", sum);    
+    print_all("s",'\0');
     return (0);
 }
