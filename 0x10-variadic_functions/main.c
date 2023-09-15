@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "variadic_functions.h"
 
 /**
@@ -7,6 +8,11 @@
  */
 int main(void)
 {
-    print_all(NULL);
+    int sum;
+
+    sum = sum_them_all(4, 98, 2, 1, -4);
+    printf("%d\n", sum);
+    sum = sum_them_all(0);
+    printf("%d\n", sum);    
     return (0);
 }
