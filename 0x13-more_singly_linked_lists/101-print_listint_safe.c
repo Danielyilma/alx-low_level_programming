@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * print_listint - printing list
+ * print_listint_safe - printing list
  *
  * @head: head of a list
  *
@@ -11,14 +11,26 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
+	const listint_t *fast = head, *slow = head;
 	size_t count = 0;
 
 	if (head == NULL)
 	return (0);
 
+	while (slow != NULL && fast != NULL && fast->next != NULL)
+	{
+		fast = fast->next->next;
+		slow = slow->next;
+
+		if (slow == fast)
+		{
+			exit(98);
+		}
+	}
+
 	while (head != NULL)
 	{
-		printf("[%p] %d\n",(void *)(&(head->n)), head->n);
+		printf("[%p] %d\n", (void *)(&(head->n)), head->n);
 		head = head->next;
 		count++;
 	}
