@@ -1,10 +1,11 @@
 #include "lists.h"
 
 /**
+ * find_listint_loop - find loop in a list else null
  *
+ * @head: head of a list
  *
- *
- *
+ * Return: address of the loop startes
  */
 
 listint_t *find_listint_loop(listint_t *head)

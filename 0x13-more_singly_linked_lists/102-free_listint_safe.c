@@ -1,9 +1,11 @@
 #include "lists.h"
 
 /**
+ * free_listint_safe - free list safely
  *
+ * @h:head of a list
  *
- *
+ * Return: number of freed node
  *
  */
 
