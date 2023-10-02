@@ -20,7 +20,7 @@ int create_file(const char *filename, char *text_content)
         if (create == -1)
         {
                 close(create);
-                create = open(filename, O_CREAT | permission);
+                create = open(filename, O_CREAT | O_WRONLY | permission);
                 if (create == -1)
                 return (-1);
         }
