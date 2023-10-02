@@ -3,15 +3,15 @@
 /**
  * main - main function
  *
- * @ac:
- * @arg:
+ * @argv: integer
+ * @argc: character
  *
  * Return:integer
  */
 
-int main(int ac, const char *arg[])
+int main(int argc, const char *argv[])
 {
-	int read_num, file1, file2, num, fileto, filefrom;
+	int read_num, num, fileto, filefrom;
 	mode_t permission = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	char buffer[BUFFER_SIZE];
 
@@ -21,25 +21,17 @@ int main(int ac, const char *arg[])
 		exit(97);
 	}
 
-	fileto = open(arg[2], O_WRONLY);
+	fileto = open(arg[2], O_CREAT | O_WRONLY | permission);
 	filefrom = open(arg[1], O_RDONLY);
-
-	if (fileto == -1)
-	{
-		fileto = open(arg[2], O_CREAT | O_WRONLY | permission);
-	}
-
 	if (filefrom == -1)
 	{
 		fprintf(stderr, "Error: Can't read from file %s\n", arg[1]);
 		exit(98);
 	}
-
 	while ((read_num = read(filefrom, buffer, BUFFER_SIZE)))
 	{
 		num = write(fileto, buffer, read_num);
 	}
-
 	if (num == -1 || fileto == -1)
 	{
 		fprintf(stderr, "Error: Can't write to %s", arg[2]);
@@ -47,22 +39,16 @@ int main(int ac, const char *arg[])
 	}
 	close(fileto);
 	close(filefrom);
-
-	file1 = fcntl(fileto, F_GETFD);
-	file2 = fcntl(filefrom, F_GETFD);
-
-	if (file1 != -1)
+	if (fcntl(fileto, F_GETFD) != -1)
 	{
 		fprintf(stderr, "Error: Can't close fd %d\n", fileto);
 		exit(100);
 	}
-	
-	if (file2 != -1)
+
+	if (fcntl(filefrom, F_GETFD) != -1)
 	{
 		fprintf(stderr, "Error: Can't close fd %d\n", filefrom);
 		exit(100);
 	}
-	
-
 	return (0);
 }
