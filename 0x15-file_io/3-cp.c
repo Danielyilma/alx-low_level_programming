@@ -15,17 +15,17 @@ int main(int argc, const char *argv[])
 	mode_t permission = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	char buffer[BUFFER_SIZE];
 
-	if (ac != 3)
+	if (argc != 3)
 	{
 		fprintf(stderr, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
-	fileto = open(arg[2], O_CREAT | O_WRONLY | permission);
-	filefrom = open(arg[1], O_RDONLY);
+	fileto = open(argv[2], O_CREAT | O_WRONLY | permission);
+	filefrom = open(argv[1], O_RDONLY);
 	if (filefrom == -1)
 	{
-		fprintf(stderr, "Error: Can't read from file %s\n", arg[1]);
+		fprintf(stderr, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	while ((read_num = read(filefrom, buffer, BUFFER_SIZE)))
@@ -34,7 +34,7 @@ int main(int argc, const char *argv[])
 	}
 	if (num == -1 || fileto == -1)
 	{
-		fprintf(stderr, "Error: Can't write to %s", arg[2]);
+		fprintf(stderr, "Error: Can't write to %s", argv[2]);
 		exit(99);
 	}
 	close(fileto);
