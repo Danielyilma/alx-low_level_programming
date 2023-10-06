@@ -21,7 +21,7 @@ int main(int argc, const char *argv[])
 		exit(97);
 	}
 
-	fileto = open(argv[2], O_CREAT | O_WRONLY | permission);
+	fileto = open(argv[2], O_CREAT | O_WRONLY, permission);
 	filefrom = open(argv[1], O_RDONLY);
 	if (filefrom == -1)
 	{
@@ -34,7 +34,7 @@ int main(int argc, const char *argv[])
 	}
 	if (num == -1 || fileto == -1)
 	{
-		fprintf(stderr, "Error: Can't write to %s", argv[2]);
+		fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	close(fileto);
