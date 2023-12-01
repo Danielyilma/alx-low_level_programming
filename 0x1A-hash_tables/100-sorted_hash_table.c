@@ -156,6 +156,8 @@ add_at_shead(shash_table_t *table, shash_node_t *element, unsigned int index)
 			else
 			table->array[index] = element;
 			element->next = temp->next;
+			free(temp->key);
+			free(temp->value);
 			free(temp);
 			return;
 		}
@@ -276,4 +278,25 @@ void free_slist(shash_node_t *head)
 		free(head);
 		head = current;
 	}
+}
+
+char *shash_table_get(const shash_table_t *ht, const char *key)
+{
+	unsigned int index = 0;
+	shash_node_t *current;
+
+	if (ht == NULL || key == NULL)
+	return (NULL);
+
+	index = key_index((unsigned char *)key, ht->size);
+	current = ht->array[index];
+
+	while (current != NULL)
+	{
+		if (strcmp(current->key, key) == 0)
+		return (current->value);
+
+		current = current->next;
+	}
+	return (NULL);
 }
