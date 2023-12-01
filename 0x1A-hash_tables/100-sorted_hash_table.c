@@ -280,6 +280,16 @@ void free_slist(shash_node_t *head)
 	}
 }
 
+/**
+ * shash_table_get - finds the value based on the key
+ *
+ * @ht: the hash table
+ * @key: key for the hash map
+ *
+ * Return: nothing
+ *
+*/
+
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	unsigned int index = 0;
