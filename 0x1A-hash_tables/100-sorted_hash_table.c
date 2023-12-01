@@ -186,11 +186,13 @@ add_at_shead(shash_table_t *table, shash_node_t *element, unsigned int index)
 
 void shash_table_print(const shash_table_t *ht)
 {
-	shash_node_t *current = ht->shead;
+	shash_node_t *current;
 	int i = 0;
 
 	if (ht == NULL)
 	return;
+
+	current = ht->stail;
 
 	printf("{");
 	while (current != NULL)
@@ -215,11 +217,13 @@ void shash_table_print(const shash_table_t *ht)
 
 void shash_table_print_rev(const shash_table_t *ht)
 {
-	shash_node_t *current = ht->stail;
+	shash_node_t *current;
 	int i = 0;
 
 	if (ht == NULL)
 	return;
+
+	current = ht->stail;
 
 	printf("{");
 	while (current != NULL)
