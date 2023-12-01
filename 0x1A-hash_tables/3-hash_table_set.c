@@ -60,6 +60,23 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 void add_at_head(hash_table_t *table, hash_node_t *element, unsigned int index)
 {
+	hash_node_t *temp = table->array[index], *prev = NULL;
+
+	while (temp != NULL)
+	{
+		if (strcmp(temp->key, element->key) == 0)
+		{
+			if (prev != NULL)
+			prev->next = element;
+			else
+			table->array[index] = element;
+			element->next = temp->next;
+			free(temp);
+			return;
+		}
+		prev = temp;
+		temp = temp->next;
+	}
 	if (table->array[index] == NULL)
 	{
 		table->array[index] = element;
