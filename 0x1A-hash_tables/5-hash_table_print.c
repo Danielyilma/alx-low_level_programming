@@ -14,6 +14,9 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t **current = ht->array, *temp = NULL;
 	unsigned int i = 0, check_first = 0;
 
+	if (ht == NULL)
+	return;
+
 	printf("{");
 	while (i < ht->size)
 	{
