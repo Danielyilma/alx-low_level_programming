@@ -192,7 +192,7 @@ void shash_table_print(const shash_table_t *ht)
 	if (ht == NULL)
 	return;
 
-	current = ht->stail;
+	current = ht->shead;
 
 	printf("{");
 	while (current != NULL)
