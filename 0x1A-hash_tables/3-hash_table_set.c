@@ -17,9 +17,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *node = malloc(sizeof(hash_node_t));
 	unsigned int index;
 
-	if (node == NULL || ht == NULL)
+	if (node == NULL)
 	return (0);
-	if (key == NULL)
+	if (key == NULL || ht == NULL)
 	{
 		free(node);
 		return (0);
@@ -71,12 +71,15 @@ void add_at_head(hash_table_t *table, hash_node_t *element, unsigned int index)
 			else
 			table->array[index] = element;
 			element->next = temp->next;
+			free(temp->key);
+			free(temp->value);
 			free(temp);
 			return;
 		}
 		prev = temp;
 		temp = temp->next;
 	}
+
 	if (table->array[index] == NULL)
 	{
 		table->array[index] = element;
