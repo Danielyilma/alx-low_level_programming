@@ -25,7 +25,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 	node->key = malloc((sizeof(char) * strlen(key)) + 1);
+	if (node->key == NULL)
+	{
+		free(node);
+		return (0);
+	}
 	node->value = malloc((sizeof(char) * strlen(value)) + 1);
+	if (node->value == NULL)
+	{
+		free(node->key);
+		free(node);
+		return (0);
+	}
 	node->next = NULL;
 
 	strcpy(node->key, key);
