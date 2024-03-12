@@ -15,6 +15,9 @@ void print_array(int *array, int left, int right);
 
 int advanced_binary(int *array, size_t size, int value)
 {
+	if (!array)
+	return (-1);
+
 	return (split_binary(array, 0, size - 1, value));
 }
 
