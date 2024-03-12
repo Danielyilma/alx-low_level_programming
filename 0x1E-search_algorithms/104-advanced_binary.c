@@ -38,6 +38,10 @@ int split_binary(int *array, int left, int right, int value)
 
 	print_array(array, left, right);
 
+	if (array[left] == value)
+	return (left);
+
+
 	if ((right - left) == 0)
 	{
 		if (array[left] == value)
