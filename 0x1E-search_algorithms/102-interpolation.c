@@ -21,7 +21,7 @@ int interpolation_search(int *array, size_t size, int value)
 
 	pos = find_pos(array, high, low, value);
 
-	while (pos > 0 && pos < (int) size)
+	while (pos >= 0 && pos < (int) size)
 	{
 		printf("Value checked array[%d] = [%d]\n", pos, array[pos]);
 		if (array[pos] == value)
