@@ -4,7 +4,7 @@ int split_binary(int *array, int left, int right, int value);
 void print_array(int *array, int left, int right);
 
 /**
- * binary_search - searches a value in sorted array
+ * advanced_binary - searches a value in sorted array
  *
  * @array: the array to be searched from
  * @size: the size of the array
@@ -15,7 +15,7 @@ void print_array(int *array, int left, int right);
 
 int advanced_binary(int *array, size_t size, int value)
 {
-	return split_binary(array, 0, size - 1, value);
+	return (split_binary(array, 0, size - 1, value));
 }
 
 /**
@@ -31,23 +31,24 @@ int advanced_binary(int *array, size_t size, int value)
 
 int split_binary(int *array, int left, int right, int value)
 {
-    int mid = (left + right) / 2, val_index = -1;
-    print_array(array, left, right);
+	int mid = (left + right) / 2, val_index = -1;
 
-    if ((right - left) == 0)
-    {
-        if (array[left] == value)
-        return (left);
-        else
-        return (-1);
-    }
+	print_array(array, left, right);
 
-    if (array[mid] >= value)
-    val_index = split_binary(array, left, mid, value);
-    else
-    val_index = split_binary(array, mid + 1, right, value);
+	if ((right - left) == 0)
+	{
+		if (array[left] == value)
+		return (left);
+		else
+		return (-1);
+	}
 
-    return (val_index);
+	if (array[mid] >= value)
+	val_index = split_binary(array, left, mid, value);
+	else
+	val_index = split_binary(array, mid + 1, right, value);
+
+	return (val_index);
 }
 
 /**
